@@ -1,0 +1,23 @@
+install.packages(c(
+ 'import',
+ 'rpart',
+ 'e1071',
+ 'odfWeave',
+ 'nnet',
+ 'car',
+ 'kernlab',
+ 'pmml',
+ 'amap',
+ 'hclusterpar',
+ 'cba',
+ 'fpc',
+ 'XML',
+ 'Hmisc',
+ 'fBasics',
+ 'mice',
+ 'descr',
+ 'reshape',
+ 'ggdendro',
+ 'ggplot2',
+ 'RODBC')
+)
