@@ -19,5 +19,6 @@ install.packages(c(
  'reshape',
  'ggdendro',
  'ggplot2',
- 'RODBC')
-)
+ 'RODBC',
+ 'sparklyr'
+))
