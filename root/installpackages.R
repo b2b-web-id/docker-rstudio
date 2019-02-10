@@ -1,4 +1,6 @@
+update.packages(ask=FALSE)
 install.packages(c(
+ 'devtools',
  'import',
  'rpart',
  'e1071',
@@ -16,9 +18,13 @@ install.packages(c(
  'fBasics',
  'mice',
  'descr',
- 'reshape',
+ 'dplyr',
+ 'dbplyr',
+ 'reshape2',
  'ggdendro',
  'ggplot2',
  'RODBC',
- 'sparklyr'
+ 'sparklyr',
+ 'RPostgreSQL',
+ 'RMySQL'
 ))
