@@ -1,22 +1,8 @@
 FROM rocker/rstudio:latest
 MAINTAINER B2B.Web.ID Data Analytics Platform Labs
-ADD root/ /root
-ENV RISET_HOST=http://riset.b2b.web.id
-ENV IMPALA_PKG=clouderaimpalaodbc_2.6.0.1000-2_amd64.deb
-RUN apt-get update && \
- apt-get install -y git \
-  unixodbc unixodbc-dev \
-  libpq-dev libmariadb-client-dev && \
-  libsasl2-modules-gssapi-mit && \
- apt-get install -y \
-  openjdk-7-jdk && \
- wget $RISET_HOST/$IMPALA_PKG -O /root/$IMPALA_PKG && \
- dpkg -i /root/$IMPALA_PKG && rm /root/$IMPALA_PKG && \
- apt-get autoremove -y && \
- apt-get clean && \
- Rscript --verbose /root/installpackages.R
-RUN cp /root/odbc.sh /etc/profile.d/ && \
-    cp /root/odbcinst.ini /etc/ && \
+RUN apt update && apt install -y zlib1g-dev && apt clean
+RUN Rscript --verbose -e 'update.packages(ask=F, repo="https://cran.rstudio.com")'
+RUN Rscript --verbose -e 'install.packages(c("purrr","vctrs","dplyr","dbplyr","openssl","rvest","gargle","vroom","googlesheets4","readxl","reprex","tidyverse"))'
 EXPOSE 8787
 VOLUME /home/rstudio
 CMD ["/init"]
