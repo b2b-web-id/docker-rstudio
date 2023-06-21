@@ -1,5 +1,5 @@
 NAME = b2bwebid/rstudio-server
-VERSION = 2021.3
+VERSION = 2023.1
 
 .PHONY: all build tag_latest release
 

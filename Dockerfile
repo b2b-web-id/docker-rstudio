@@ -1,6 +1,6 @@
 FROM b2bwebid/r-quant:2021.3
 MAINTAINER B2B.Web.ID Data Analytics Platform Labs
-ENV RSTUDIO 1.4.1717
+ENV RSTUDIO 2023.06.0-421
 RUN apt update && apt upgrade -y && \
     apt install -y locales apt-utils wget libprotobuf-dev protobuf-compiler apache2 apache2-dev ssl-cert libapparmor-dev libcurl4-openssl-dev libssl-dev \
      libxml2-dev libssh2-1-dev libcairo2-dev xvfb xfonts-base debhelper zlib1g-dev gdebi-core git sudo && \
